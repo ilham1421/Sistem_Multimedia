@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Kelompok Kami</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Mengatur font Inter sebagai default */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #e2e8f0; /* Warna latar belakang abu-abu kebiruan yang lebih lembut */
+        color: #2d3748; /* Warna teks gelap yang lebih dalam */
+      }
+      /* Menyembunyikan semua bagian konten secara default dengan transisi */
+      .content-section {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+      /* Menampilkan bagian konten yang aktif dengan transisi */
+      .content-section.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Efek hover untuk tombol navigasi */
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+        /* Tambahan untuk efek kilau */
+        transition: all 0.3s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #c4b5fd; /* Warna ungu muda untuk underline yang lebih elegan */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+      }
+      .nav-link:hover::after,
+      .nav-link.active-nav::after {
+        /* Menambahkan kelas active-nav untuk underline pada menu aktif */
+        transform: translateX(0);
+      }
+
+      /* Efek kilau pada hover */
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: skewX(-20deg);
+        transition: all 0.3s ease;
+      }
+      .nav-link:hover::before {
+        left: 100%;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav
+      class="bg-gradient-to-r from-blue-800 to-purple-900 p-4 shadow-2xl sticky top-0 z-50 transform transition-all duration-300 hover:shadow-3xl"
+    >
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-5xl font-extrabold tracking-widest mb-4 md:mb-0 rounded-2xl px-6 py-3 bg-blue-700 hover:bg-blue-600 transition duration-300 transform hover:scale-110 hover:shadow-xl font-serif"
+        >
+          <span class="text-pink-300">M</span
+          ><span class="text-indigo-300">I</span
+          ><span class="text-green-300">A</span>
+        </a>
+        <div class="flex flex-wrap justify-center space-x-3 md:space-x-8">
+          <button
+            id="nav-home"
+            class="nav-link text-white text-xl font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-80 transform hover:scale-105"
+          >
+            Home
+          </button>
+          <button
+            id="nav-about"
+            class="nav-link text-white text-xl font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-80 transform hover:scale-105"
+          >
+            About
+          </button>
+          <button
+            id="nav-video"
+            class="nav-link text-white text-xl font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:shadow-xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-80 transform hover:scale-105"
+          >
+            Video YouTube
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="flex-grow container mx-auto p-4 md:p-8 mt-8">
+      <!-- Bagian Home -->
+      <section
+        id="home-section"
+        class="content-section active bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-200"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-6 text-center leading-tight"
+        >
+          Selamat Datang di Halaman Tugas Kelompok Kami!
+        </h1>
+        <p
+          class="text-lg text-gray-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto"
+        >
+          Halaman ini dibuat sebagai bagian dari tugas kelompok kami. Di sini
+          Anda akan menemukan informasi tentang proyek kami, perkenalan anggota
+          tim, dan video menarik.
+        </p>
+        <p
+          class="text-xl font-semibold text-blue-600 leading-relaxed mb-8 text-center max-w-3xl mx-auto"
+        >
+          Sebagai bagian dari eksplorasi budaya dan sejarah, kami akan membahas
+          sedikit tentang salah satu situs bersejarah penting di Sulawesi
+          Selatan, yaitu Benteng Somba Opu.
+        </p>
+
+        <h2
+          class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 text-center"
+        >
+          Benteng Somba Opu: Sejarah dan Asal-usul Singkat
+        </h2>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-blue-50 p-6 rounded-2xl shadow-inner border border-blue-200"
+        >
+          <div>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+              Benteng Somba Opu adalah salah satu peninggalan sejarah Kerajaan
+              Gowa yang sangat penting. Dibangun pada abad ke-16, sekitar tahun
+              1525, oleh Raja Gowa ke-9, Daeng Matanre Karaeng Tumapa'risi'
+              Kallonna. Benteng ini awalnya berfungsi sebagai pusat perdagangan
+              dan pertahanan maritim yang strategis.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+              Pada masa kejayaannya, Benteng Somba Opu menjadi salah satu
+              pelabuhan niaga terbesar di Asia Tenggara, menarik pedagang dari
+              berbagai penjuru dunia seperti Portugis, Inggris, Denmark, dan
+              Tiongkok. Ini menunjukkan betapa kuat dan makmurnya Kerajaan Gowa
+              pada saat itu.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Namun, benteng ini mengalami kehancuran parah setelah diserang
+              oleh VOC (Vereenigde Oostindische Compagnie) di bawah pimpinan
+              Cornelis Speelman pada tahun 1669, dalam peristiwa yang dikenal
+              sebagai Perang Makassar. Meskipun hancur, sisa-sisa benteng ini
+              tetap menjadi saksi bisu kejayaan dan perjuangan Kerajaan Gowa.
+              Saat ini, situs Benteng Somba Opu telah direvitalisasi menjadi
+              kompleks wisata sejarah dan budaya yang menarik.
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <!-- Image for Benteng Somba Opu -->
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4noFARGORbN70BEGhRHdhhahqFF0OBqW774_58iRDaaZo-CEfT1X_tHtSu70l7jWVirOeJ2JgSKuJZ4uG157G_6xLh2HrFlb-AXOfG53_34MIH8BJLrAt32M5G4DOXEGV7gnlgvx=s1360-w1360-h1020-rw"
+              alt="Gambar Benteng Somba Opu"
+              class="rounded-xl shadow-lg max-w-full h-auto border-4 border-blue-400 transform hover:scale-105 transition duration-300"
+            />
+          </div>
+        </div>
+
+        <p
+          class="text-lg text-gray-700 leading-relaxed mt-10 text-center max-w-3xl mx-auto"
+        >
+          Kami mengundang Anda untuk menjelajahi setiap bagian dari situs ini
+          untuk mendapatkan pemahaman yang lebih dalam tentang proyek kami dan
+          mengenal tim di baliknya. Selamat menikmati!
+        </p>
+      </section>
+
+      <!-- Bagian About (Perkenalan Anggota Kelompok) -->
+      <section
+        id="about-section"
+        class="content-section bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-200"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-10 text-center leading-tight"
+        >
+          Tentang Kami - Anggota Kelompok
+        </h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Anggota 1 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/ilham.png"
+              alt="Foto Anggota 1"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">
+              Muh. Ilham Akbar
+            </h2>
+            <p class="text-gray-700 mb-3 font-medium">Peran: Ketua Kelompok</p>
+            <p class="text-gray-600 text-base italic">
+              "Bersemangat dalam inovasi dan kolaborasi untuk mencapai tujuan
+              bersama."
+            </p>
+          </div>
+          <!-- Anggota 2 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/sipa.png"
+              alt="Foto Anggota 2"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">
+              Arsifah Ainun Aulia
+            </h2>
+            <p class="text-gray-700 mb-3 font-medium">Peran: Desainer UI/UX</p>
+            <p class="text-gray-600 text-base italic">
+              "Fokus pada pengalaman pengguna yang intuitif dan visual yang
+              menawan."
+            </p>
+          </div>
+          <!-- Anggota 3 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/ipul.png"
+              alt="Foto Anggota 3"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">
+              Syaifullah Mahfudz
+            </h2>
+            <p class="text-gray-700 mb-3 font-medium">
+              Peran: Pengembang Frontend
+            </p>
+            <p class="text-gray-600 text-base italic">
+              "Membangun antarmuka yang bersih, efisien, dan responsif untuk
+              semua perangkat."
+            </p>
+          </div>
+          <!-- Anggota 4 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/kia.png"
+              alt="Foto Anggota 4"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">
+              Zaskia Aulia Ashar
+            </h2>
+            <p class="text-gray-700 mb-3 font-medium">Peran: Penulis Konten</p>
+            <p class="text-gray-600 text-base italic">
+              "Menyampaikan pesan dengan jelas, ringkas, dan menarik bagi
+              audiens."
+            </p>
+          </div>
+          <!-- Anggota 5 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/fifi.png"
+              alt="Foto Anggota 5"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">Fifiana</h2>
+            <p class="text-gray-700 mb-3 font-medium">Peran: Peneliti</p>
+            <p class="text-gray-600 text-base italic">
+              "Selalu ingin tahu dan mencari informasi baru untuk memperkaya
+              proyek."
+            </p>
+          </div>
+          <!-- Anggota 6 -->
+          <div
+            class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center border border-blue-300 transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="./foto/dia.png"
+              alt="Foto Anggota 6"
+              class="w-36 h-36 rounded-full object-cover mb-5 border-4 border-blue-400 shadow-md"
+            />
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">
+              Dia Rahmatillah
+            </h2>
+            <p class="text-gray-700 mb-3 font-medium">
+              Peran: Koordinator Proyek
+            </p>
+            <p class="text-gray-600 text-base italic">
+              "Memastikan semua berjalan sesuai rencana dan mencapai hasil
+              terbaik."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian Video YouTube -->
+      <section
+        id="video-section"
+        class="content-section bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-200"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-6 text-center leading-tight"
+        >
+          Jelajahi Video Kami!
+        </h1>
+        <p
+          class="text-lg text-gray-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto"
+        >
+          Kami telah memilih video ini untuk memberikan Anda wawasan lebih dalam
+          tentang topik yang relevan dengan proyek kami, atau sekadar untuk
+          hiburan. Selamat menyaksikan!
+        </p>
+        <div class="flex justify-center flex-col items-center">
+          <div
+            class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-purple-500 transform hover:scale-102 transition duration-300"
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Rt_OLaW5QrY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="text-center text-gray-600 text-base mt-6 max-w-2xl">
+            Video ini memberikan gambaran yang menarik tentang Benteng Somba
+            Opu, memperlihatkan keindahan dan sejarahnya yang kaya. Jangan
+            lewatkan detail-detail menarik di dalamnya!
+          </p>
+          <a
+            href="https://youtu.be/Rt_OLaW5QrY"
+            target="_blank"
+            class="mt-6 px-8 py-3 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Tonton di YouTube
+          </a>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-8">
+          *Anda dapat mengganti ID video YouTube di kode `src` iframe di atas
+          dengan video pilihan Anda.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 text-gray-300 p-8 mt-16 text-center shadow-inner border-t-4 border-blue-700"
+    >
+      <div class="container mx-auto">
+        <p class="text-xl font-semibold mb-2">
+          © 2025 Tim Proyek Kami. Hak Cipta Dilindungi.
+        </p>
+        <p class="text-base text-gray-400">
+          Didedikasikan dengan
+          <span class="text-red-500 text-2xl align-middle">&hearts;</span> untuk
+          inovasi dan kolaborasi.
+        </p>
+        <p class="text-sm text-gray-500 mt-4">
+          Untuk informasi lebih lanjut atau pertanyaan, silakan hubungi kami.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mendapatkan referensi ke tombol navigasi
+      const navHome = document.getElementById("nav-home");
+      const navAbout = document.getElementById("nav-about");
+      const navVideo = document.getElementById("nav-video");
+
+      // Mendapatkan referensi ke bagian konten
+      const homeSection = document.getElementById("home-section");
+      const aboutSection = document.getElementById("about-section");
+      const videoSection = document.getElementById("video-section");
+
+      // Mengambil semua tombol navigasi
+      const navButtons = document.querySelectorAll(".nav-link");
+
+      // Fungsi untuk menyembunyikan semua bagian konten dan menghapus kelas aktif dari nav
+      function hideAllSections() {
+        homeSection.classList.remove("active");
+        aboutSection.classList.remove("active");
+        videoSection.classList.remove("active");
+        navButtons.forEach((button) => button.classList.remove("active-nav"));
+      }
+
+      // Fungsi untuk menampilkan bagian yang dipilih dan menandai nav yang aktif
+      function showSection(section, navButton) {
+        hideAllSections();
+        section.classList.add("active");
+        navButton.classList.add("active-nav"); // Tambahkan kelas active-nav
+      }
+
+      // Menambahkan event listener ke tombol navigasi
+      navHome.addEventListener("click", () =>
+        showSection(homeSection, navHome)
+      );
+      navAbout.addEventListener("click", () =>
+        showSection(aboutSection, navAbout)
+      );
+      navVideo.addEventListener("click", () =>
+        showSection(videoSection, navVideo)
+      );
+
+      // Inisialisasi: Tampilkan bagian home saat halaman dimuat dan tandai nav home sebagai aktif
+      document.addEventListener("DOMContentLoaded", () => {
+        showSection(homeSection, navHome);
+      });
+    </script>
+  </body>
+</html>
